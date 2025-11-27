@@ -1,0 +1,1 @@
+# QTC-Capital-Systematic-trading
