@@ -14,7 +14,7 @@ class Strategy:
         self.s1 = pairs[0]
         self.s2 = pairs[1]
 
-        self.lookback = int(kwargs.get("lookback", 600))   # minutes  (10 hours)
+        self.lookback = int(kwargs.get("lookback", 60))   # minutes  (1 hours)
         self.entry_z = float(kwargs.get("entry_z", 1.0))
 
         self.state = 0  # -1 short spread, 0 flat, +1 long spread
