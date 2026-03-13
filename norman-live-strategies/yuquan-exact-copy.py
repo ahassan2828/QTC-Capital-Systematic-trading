@@ -11,11 +11,17 @@ pairs = ("PNC", "BAC") # Change this
     
 class Strategy:
     def __init__(self, **kwargs):
-        self.s1 = pairs[0]
-        self.s2 = pairs[1]
 
-        self.lookback = int(kwargs.get("lookback", 60))   # minutes  (1 hours)
+        self.s1 = kwargs.get("s1", "PNC")
+        self.s2 = kwargs.get("s2", "BAC")
+
+        self.lookback = int(kwargs.get("lookback", 100))
         self.entry_z = float(kwargs.get("entry_z", 1.0))
+
+        self.state = 0
+        self.leg = 0
+
+        self.q1 = float(kwargs.get("q1", 1))
 
         self.state = 0  # -1 short spread, 0 flat, +1 long spread
         self.leg = 0    # which leg to place next when entering/exiting
